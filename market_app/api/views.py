@@ -8,7 +8,7 @@ from .permissions import IsStaffOrReadOnly, IsGroupMember, BlockSpecificUser, is
 class ManufacturerList(generics.ListCreateAPIView):
     queryset = Manufacturer.objects.all()
     serializer_class = ManufacturerSerializer
-    permission_classes = [IsStaffOrReadOnly | IsAuthenticated]
+    permission_classes = [IsAuthenticated]  # IsStaffOrReadOnly
 
 
 class ManufacturerDetail(generics.RetrieveUpdateDestroyAPIView):
